@@ -1,0 +1,9 @@
+{
+  "name": "algorithms",
+  "version": "0.0.1",
+  "scripts": {
+    "hello": "node ./hello.js",
+    "ladder": "node ./ladder.js",
+    "matrix": "node ./matrix.js"
+  }
+}
