@@ -1,21 +1,24 @@
-// Dada uma matriz quadrada qualquer, retorne a soma de todos os valores contidos nas diagonais.
-// Exemplo:
-// 1 2 3
-// 4 5 6
-// 7 8 9
-// A soma dos valores das diagonais é 1 + 5 + 9 + 3 + 5 + 7 = 25
 
+// Dada uma matriz quadrada qualquer, retorne a soma das duas diagonais.
 const matriz = [
   [1, 2, 3],
   [4, 5, 6],
-  [7, 8, 9],
+  [7, 8, 10],
 ];
 
-let soma = 0;
+let diagonalPrincipal = 0;
+let diagonalSecundaria = 0;
 
 for (let i = 0; i < matriz.length; i++) {
-  soma += matriz[i][i];
-  soma += matriz[i][matriz.length - 1 - i];
+  for (let j = 0; j < matriz[i].length; j++) {
+    if (i === j) {
+      diagonalPrincipal += matriz[i][j];
+    }
+    if (i + j === matriz.length - 1) {
+      diagonalSecundaria += matriz[i][j];
+    }
+  }
 }
 
-console.log(soma);
+console.log('Top Left to Bottom Right: ', diagonalPrincipal);
+console.log('Bottom left to Top Right', diagonalSecundaria);
